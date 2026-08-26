@@ -3537,6 +3537,520 @@ html,body{
   }
 }
 
+
+/* ==================================================================
+   EXTERNAL MOBILE V2 · Mobile-first public landing experience
+   Desktop is intentionally unchanged.
+   ================================================================== */
+
+@media(max-width:960px){
+  /* Native mobile scrolling: no snap fights, no forced section jumps. */
+  html{
+    scroll-snap-type:none!important;
+    scroll-behavior:smooth!important;
+    overscroll-behavior-y:auto!important;
+  }
+  .story > .scene{
+    scroll-snap-align:none!important;
+    scroll-snap-stop:normal!important;
+  }
+
+  body{
+    overflow-x:hidden!important;
+  }
+
+  /* Header: compact two-row layout with swipeable nav. */
+  .topbar{
+    height:auto!important;
+    min-height:0!important;
+    display:flex!important;
+    flex-wrap:wrap!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:8px 12px!important;
+    padding:10px 16px 10px!important;
+    background:linear-gradient(180deg,rgba(5,15,27,.94),rgba(5,15,27,.74))!important;
+    border-bottom:1px solid rgba(255,255,255,.075)!important;
+    backdrop-filter:blur(18px)!important;
+  }
+  .brand{
+    flex:0 0 auto!important;
+  }
+  .brand-logo{
+    width:auto!important;
+    height:27px!important;
+    max-width:150px!important;
+  }
+  .topnav{
+    order:2!important;
+    flex:0 0 100%!important;
+    width:100%!important;
+    display:flex!important;
+    gap:8px!important;
+    overflow-x:auto!important;
+    overscroll-behavior-x:contain!important;
+    -webkit-overflow-scrolling:touch!important;
+    scrollbar-width:none!important;
+    padding:2px 0 2px!important;
+    white-space:nowrap!important;
+    margin:0!important;
+  }
+  .topnav::-webkit-scrollbar{display:none!important}
+  .topnav a{
+    flex:0 0 auto!important;
+    min-height:34px!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    padding:0 11px!important;
+    border:1px solid rgba(255,255,255,.08)!important;
+    border-radius:999px!important;
+    background:rgba(255,255,255,.035)!important;
+    color:#c7d4e0!important;
+    font-size:11px!important;
+    font-weight:750!important;
+  }
+
+  /* Global mobile section frame */
+  .scene{
+    min-height:auto!important;
+    padding:110px 16px 48px!important;
+    align-items:flex-start!important;
+  }
+  .scene-inner,
+  .context-scene .scene-inner,
+  .season1-scene .scene-inner,
+  #criteria .scene-inner,
+  #prize .scene-inner,
+  #judges .scene-inner{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0!important;
+  }
+
+  /* Hide desktop progress rail. */
+  .progress{display:none!important}
+
+  /* Keep the 3D system as a subtle background accent on phones/tablets. */
+  .scene-visual-stage{
+    width:min(58vw,300px)!important;
+    max-width:300px!important;
+    right:-13vw!important;
+    top:16vh!important;
+    opacity:.36!important;
+    z-index:2!important;
+  }
+  .scene-visual-orbits{
+    opacity:.48!important;
+    inset:-1%!important;
+  }
+  .scene-visual-aura{
+    opacity:.46!important;
+    filter:blur(42px)!important;
+  }
+  .scene-visual-orbits .orbit-ring{
+    border-width:1px!important;
+  }
+  .scene-visual-orbits .orbit-ring::before,
+  .scene-visual-orbits .orbit-ring::after{
+    width:7px!important;
+    height:7px!important;
+  }
+
+  /* Content always wins over decorative 3D. */
+  .scene .scene-inner,
+  .context-editorial,
+  .season1-layout,
+  #criteria .chapter.right,
+  #prize .chapter,
+  #judges .chapter.right{
+    position:relative!important;
+    z-index:4!important;
+  }
+
+  /* Hero */
+  .hero{
+    min-height:100svh!important;
+    padding-top:118px!important;
+    padding-bottom:38px!important;
+    align-items:flex-end!important;
+  }
+  .hero .scene-inner{
+    padding-bottom:0!important;
+  }
+  #hero-bg-video{
+    object-position:68% center!important;
+    opacity:.76!important;
+  }
+  .hero-video-overlay{
+    background:
+      linear-gradient(90deg,rgba(2,8,18,.78),rgba(2,8,18,.36)),
+      linear-gradient(180deg,rgba(2,8,18,.28),rgba(2,8,18,.20) 38%,rgba(2,8,18,.91))!important;
+  }
+  .hero .eyebrow{
+    font-size:9.5px!important;
+    line-height:1.3!important;
+    padding:8px 10px!important;
+    letter-spacing:.08em!important;
+  }
+  .hero h1{
+    margin:14px 0 14px!important;
+    max-width:100%!important;
+    font-size:clamp(54px,17vw,76px)!important;
+    line-height:.83!important;
+    letter-spacing:-.065em!important;
+  }
+  .hero-copy{
+    max-width:94%!important;
+    font-size:14px!important;
+    line-height:1.6!important;
+  }
+  .scrollhint{
+    margin-top:18px!important;
+    font-size:9px!important;
+  }
+
+  /* Bối cảnh */
+  .context-scene{
+    padding-top:112px!important;
+    padding-bottom:48px!important;
+  }
+  .context-editorial,
+  .context-main{
+    width:100%!important;
+    max-width:100%!important;
+  }
+  .context-main{
+    padding:0!important;
+  }
+  .context-main:before{
+    left:-16px!important;
+    right:-16px!important;
+    top:-20px!important;
+    width:auto!important;
+    height:calc(100% + 40px)!important;
+    background:linear-gradient(
+      90deg,
+      rgba(5,18,34,.88),
+      rgba(5,18,34,.70) 72%,
+      rgba(5,18,34,.28)
+    )!important;
+    border-radius:22px!important;
+  }
+  .context-title{
+    margin:8px 0 14px!important;
+    max-width:100%!important;
+    font-size:clamp(39px,11.5vw,54px)!important;
+    line-height:.96!important;
+    letter-spacing:-.05em!important;
+  }
+  .context-title-line{
+    display:block!important;
+    white-space:normal!important;
+  }
+  .context-title .nowrap{
+    white-space:nowrap!important;
+  }
+  .context-lead{
+    max-width:100%!important;
+    font-size:14px!important;
+    line-height:1.6!important;
+  }
+  .context-signals{
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+    margin-top:16px!important;
+  }
+  .context-signal{
+    padding:13px 14px!important;
+    background:rgba(7,21,37,.46)!important;
+    border:1px solid rgba(255,255,255,.07)!important;
+    border-radius:14px!important;
+  }
+  .context-signal strong{
+    font-size:24px!important;
+  }
+  .context-signal span{
+    font-size:12px!important;
+  }
+  .context-journey{
+    grid-template-columns:1fr!important;
+    gap:0!important;
+    margin-top:14px!important;
+    border:none!important;
+  }
+  .journey-step{
+    padding:14px 0!important;
+    border-top:1px solid rgba(255,255,255,.08)!important;
+  }
+  .journey-step.active{
+    padding-left:0!important;
+  }
+  .journey-arrow{
+    height:26px!important;
+    display:flex!important;
+    justify-content:flex-start!important;
+    align-items:center!important;
+    transform:rotate(90deg)!important;
+    transform-origin:left center!important;
+  }
+
+  /* Mùa 1 */
+  .season1-scene{
+    padding-top:112px!important;
+    padding-bottom:48px!important;
+  }
+  .season1-layout{
+    display:block!important;
+    width:100%!important;
+    max-width:100%!important;
+    margin:0!important;
+  }
+  .season1-head{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0 0 18px!important;
+  }
+  .season1-banner{
+    margin-bottom:10px!important;
+  }
+  .season1-head h2{
+    max-width:100%!important;
+    white-space:normal!important;
+    margin:0 0 12px!important;
+    font-size:clamp(38px,11vw,50px)!important;
+    line-height:.96!important;
+  }
+  .season1-head > p{
+    max-width:100%!important;
+    margin:0 0 10px!important;
+    font-size:13.5px!important;
+    line-height:1.58!important;
+  }
+  .season1-video-shell{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0!important;
+    aspect-ratio:16/9!important;
+    border-radius:16px!important;
+    box-shadow:0 20px 56px rgba(0,0,0,.28)!important;
+  }
+  .season1-video{
+    object-fit:contain!important;
+  }
+
+  /* Điều kiện */
+  #criteria{
+    padding-top:112px!important;
+    padding-bottom:48px!important;
+  }
+  #criteria .chapter.right{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  #criteria .chapter.right:before{
+    left:-16px!important;
+    right:-16px!important;
+    top:-20px!important;
+    width:auto!important;
+    height:calc(100% + 40px)!important;
+    background:linear-gradient(
+      90deg,
+      rgba(5,18,34,.86),
+      rgba(5,18,34,.66) 75%,
+      rgba(5,18,34,.20)
+    )!important;
+    border-radius:22px!important;
+  }
+  #criteria h2{
+    max-width:100%!important;
+    margin:9px 0 18px!important;
+    font-size:clamp(41px,12vw,56px)!important;
+    line-height:.94!important;
+  }
+  #criteria .triad{
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+    margin-top:0!important;
+  }
+  #criteria .triad .item{
+    min-height:0!important;
+    padding:16px!important;
+    border-radius:16px!important;
+  }
+  #criteria .triad .item h3{
+    margin:32px 0 7px!important;
+    min-height:0!important;
+    font-size:17px!important;
+    line-height:1.08!important;
+  }
+  #criteria .triad .item p{
+    font-size:12.5px!important;
+    line-height:1.52!important;
+  }
+  #criteria .criteria-audience{
+    width:100%!important;
+    margin-top:12px!important;
+    align-items:flex-start!important;
+    flex-direction:column!important;
+    gap:5px!important;
+    border-radius:15px!important;
+  }
+
+  /* Giải thưởng */
+  #prize{
+    padding-top:112px!important;
+    padding-bottom:48px!important;
+  }
+  #prize .chapter{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  #prize .chapter:before{
+    left:-16px!important;
+    right:-16px!important;
+    top:-20px!important;
+    width:auto!important;
+    height:calc(100% + 40px)!important;
+    background:linear-gradient(
+      90deg,
+      rgba(5,18,34,.88),
+      rgba(5,18,34,.68) 75%,
+      rgba(5,18,34,.22)
+    )!important;
+    border-radius:22px!important;
+  }
+  #prize h2,
+  #prize .one-line-desktop{
+    max-width:100%!important;
+    white-space:normal!important;
+    margin:8px 0 18px!important;
+    font-size:clamp(38px,11vw,52px)!important;
+    line-height:.95!important;
+  }
+  #prize .prizegrid{
+    width:100%!important;
+    max-width:100%!important;
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+  }
+  #prize .prize{
+    grid-template-columns:74px minmax(0,1fr)!important;
+    gap:12px!important;
+    padding:16px!important;
+    border-radius:16px!important;
+  }
+  #prize .prize h3{
+    font-size:16px!important;
+  }
+  #prize .prize p{
+    font-size:13px!important;
+  }
+  #prize .prize-note{
+    max-width:100%!important;
+    margin-top:14px!important;
+    padding-top:14px!important;
+    font-size:12.5px!important;
+  }
+
+  /* BGK */
+  #judges{
+    padding-top:112px!important;
+    padding-bottom:56px!important;
+  }
+  #judges .chapter.right{
+    width:100%!important;
+    max-width:100%!important;
+    margin:0!important;
+    padding:0!important;
+    transform:none!important;
+  }
+  #judges .chapter.right:before{
+    left:-16px!important;
+    right:-16px!important;
+    top:-22px!important;
+    width:auto!important;
+    height:calc(100% + 44px)!important;
+    background:linear-gradient(
+      90deg,
+      rgba(5,18,34,.90),
+      rgba(5,18,34,.67) 75%,
+      rgba(5,18,34,.18)
+    )!important;
+    border-radius:22px!important;
+  }
+  #judges h2{
+    max-width:100%!important;
+    margin:8px 0 18px!important;
+    font-size:clamp(43px,12.5vw,58px)!important;
+    line-height:.94!important;
+  }
+  #judges p{
+    max-width:100%!important;
+    margin:0!important;
+    font-size:14px!important;
+    line-height:1.62!important;
+  }
+
+  /* Audio button stays reachable without blocking content. */
+  .music-state{
+    left:12px!important;
+    bottom:12px!important;
+    width:32px!important;
+    height:32px!important;
+  }
+  .v2-visual-badge{
+    display:none!important;
+  }
+}
+
+@media(max-width:560px){
+  .topbar{
+    padding-left:14px!important;
+    padding-right:14px!important;
+  }
+  .brand-logo{
+    height:25px!important;
+  }
+  .scene{
+    padding-left:14px!important;
+    padding-right:14px!important;
+  }
+  .scene-visual-stage{
+    width:min(62vw,255px)!important;
+    right:-20vw!important;
+    top:17vh!important;
+    opacity:.28!important;
+  }
+  .hero{
+    padding-top:112px!important;
+  }
+  .hero h1{
+    font-size:clamp(50px,16vw,66px)!important;
+  }
+  #hero-bg-video{
+    object-position:72% center!important;
+  }
+  #prize .prize{
+    grid-template-columns:1fr!important;
+    gap:6px!important;
+  }
+}
+
+@media(max-width:390px){
+  .topnav a{
+    min-height:32px!important;
+    padding:0 9px!important;
+    font-size:10.5px!important;
+  }
+  .hero h1{
+    font-size:49px!important;
+  }
+}
+
 </style>
 </head>
 <body>
